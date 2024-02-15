@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    #url: jdbc:postgresql://localhost:5432/manage_tasks
+    url: jdbc:postgresql://localhost:5432/core_bank
+    #username: spring
+    username: postgres
+    #password: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+    database: postgresql
+    show-sql: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
