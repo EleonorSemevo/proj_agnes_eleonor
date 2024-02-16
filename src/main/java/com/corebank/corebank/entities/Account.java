@@ -2,11 +2,11 @@ package com.corebank.corebank.entities;
 
 import com.corebank.corebank.converters.AccountTypeConverter;
 import com.corebank.corebank.enums.AccountType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -35,8 +35,9 @@ public class Account extends BaseEntity{
     private List<Transaction> transactions;
 
     @ManyToOne
-    @JoinColumn(name="owner_id")
-    private Client owner;
+    @JoinColumn(name="client_id")
+    @JsonIgnore
+    private Client client;
 
 
 }

@@ -19,12 +19,13 @@ public interface AccountDto {
     AccountType getType();
 
     double getBalance();
+    Client getClient();
 
-    Account getAccount();
 
-    List<Transaction> getTransactions();
 
-    Client getOwner();
+    //List<Transaction> getTransactions();
+
+
 
 
 

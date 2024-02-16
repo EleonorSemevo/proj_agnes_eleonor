@@ -10,12 +10,6 @@ package com.corebank.corebank.dtos;
 @AllArgsConstructor
 //@NoArgsConstructor
 public class CreateAccountDto {
-   /* @NotBlank(message = "Le nom du client ne peut pas être vide")
-    private String name;
-
-    @NotBlank(message = "L'adresse email du client ne peut pas être vide")
-    @Email(message = "Veuillez entrer une adresse email valide")
-    private String email;*/
 
     @NotBlank(message = "Le type de count ne peut pas etre vide")
     private String account_type;

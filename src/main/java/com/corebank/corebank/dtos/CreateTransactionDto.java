@@ -6,12 +6,14 @@ package com.corebank.corebank.dtos;
         import lombok.AllArgsConstructor;
         import lombok.Data;
         import lombok.NoArgsConstructor;
+        import lombok.NonNull;
 
 @Data // permet de generer les getter et setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateTransactionDto {
-    @NotBlank(message = "Le montant ne doit pas être vide")
+
+    @NonNull
     private double amount;
 
     @NotBlank(message = "Le type de transaction  ne peut pas etre vide")

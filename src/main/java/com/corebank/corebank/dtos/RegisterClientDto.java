@@ -1,5 +1,6 @@
 package com.corebank.corebank.dtos;
 
+import com.corebank.corebank.constraints.IsEmailExists;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ public class RegisterClientDto {
 
     @NotBlank(message = "L'adresse email du client ne peut pas être vide")
     @Email(message = "Veuillez entrer une adresse email valide")
+    @IsEmailExists(message = "L'email existe déjà")
     private String email;
 
     @NotBlank(message = "Le type de count ne peut pas etre vide")

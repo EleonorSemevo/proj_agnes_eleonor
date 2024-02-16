@@ -12,10 +12,12 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 
 
 @RestController
@@ -56,16 +58,6 @@ public class AccountController {
         return new ResponseEntity<>(accountService.getAccounts(pageable, start, end), HttpStatus.OK);
     }
 
-    /* public ResponseEntity<String>  rapportAccount(
-            @PathVariable LocalDate Start,
-            @PathVariable LocalDate end,
-            @PathVariable int page,
-            @PathVariable int size
-            ) {
 
-
-    }
-
-    @GetMapping*/
 
 }

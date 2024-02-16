@@ -34,7 +34,7 @@ public class CorebankApplication {
 
 			Account account= Account.builder()
 					.type(AccountType.CURRENT)
-					.owner(client)
+					.client(client)
 					.number("1234567890")
 					.createdAt(LocalDateTime.now())
 					.balance(0).build();

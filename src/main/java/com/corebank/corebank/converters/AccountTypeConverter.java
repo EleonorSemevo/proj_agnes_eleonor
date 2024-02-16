@@ -1,7 +1,6 @@
 package com.corebank.corebank.converters;
 
 import com.corebank.corebank.enums.AccountType;
-import com.corebank.corebank.enums.AccountTypeName;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

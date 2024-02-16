@@ -61,7 +61,7 @@ public class ClientServiceImpl implements ClientService {
 
         Account account =  Account.builder()
                         .type(accountType)
-                        .owner(client)
+                        .client(client)
                         .number(generateAccountNumber())
                         .balance(0)
                         .createdAt(LocalDateTime.now())
@@ -99,7 +99,7 @@ public class ClientServiceImpl implements ClientService {
                 .number(generateAccountNumber())
                 .balance(0)
                 .createdAt(LocalDateTime.now())
-                .owner(client.get()).build();
+                .client(client.get()).build();
 
        // accountTypeRepository.save(account);
         accountRepository.save(account);

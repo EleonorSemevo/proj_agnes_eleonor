@@ -1,7 +1,6 @@
 package com.corebank.corebank.converters;
 
 import com.corebank.corebank.enums.TransactionType;
-import com.corebank.corebank.enums.TransactionTypeName;
 import jakarta.persistence.AttributeConverter;
 
 import java.util.stream.Stream;

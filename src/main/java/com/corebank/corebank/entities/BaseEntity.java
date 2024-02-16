@@ -1,5 +1,6 @@
 package com.corebank.corebank.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class BaseEntity {
     private Long id;
 
     @Column(updatable = false)
+    @JsonIgnore
     private LocalDateTime createdAt;
 
    /* @ManyToOne
@@ -26,6 +28,7 @@ public class BaseEntity {
     private User createdBy;*/
 
     @Column(insertable = false)
+    @JsonIgnore
     private LocalDateTime updatedAt;
 
    /* @ManyToOne

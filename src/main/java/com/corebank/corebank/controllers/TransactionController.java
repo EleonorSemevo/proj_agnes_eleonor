@@ -30,25 +30,14 @@ public class TransactionController {
         this.transactionService= transactionService;
     }
 
-    @PostMapping("/{account_id}/transactions")
-    public ResponseEntity<String> createTransaction(
-            @Valid @RequestBody CreateTransactionDto dto,
-            @IsValidAccountId @PathVariable Long account_id
-    ) {
-        transactionService.createTransaction(dto, account_id);
-        return new ResponseEntity<>(
-                "Transaction created successfully", HttpStatus.CREATED);
-    }
-
-    ///api/v1/accounts/{account_id}/transactions?start={start}&end={end}
-    //  &page={page}&size={size}
     @GetMapping("/{account_id}/transactions")
     public ResponseEntity<Page<TransactionDto>> getProjects(
             @RequestParam(defaultValue = "0") String page,
             @RequestParam(defaultValue = "10") String size,
             @RequestParam String start,
             @RequestParam String end,
-            @IsValidAccountId @PathVariable Long account_id
+            @IsValidAccountId
+            @PathVariable Long account_id
     ) {
         Pageable pageable = PageRequest.of(
                 Integer.parseInt(page),
@@ -57,6 +46,28 @@ public class TransactionController {
 
         return new ResponseEntity<>(transactionService.findTransactions(pageable,start,end), HttpStatus.OK);
     }
+
+    @PostMapping("/{account_id}/transactions")
+    public ResponseEntity<String> createTransaction(
+            @Valid @RequestBody CreateTransactionDto dto,
+            @IsValidAccountId
+            @PathVariable Long account_id
+    ) {
+        transactionService.createTransaction(dto, account_id);
+        return new ResponseEntity<>(
+                "Transaction created successfully", HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public String getProject(
+            @PathVariable Long id
+    ) {
+        return id+"";
+    }
+
+    ///api/v1/accounts/{account_id}/transactions?start={start}&end={end}
+    //  &page={page}&size={size}
+
 
 
 }
