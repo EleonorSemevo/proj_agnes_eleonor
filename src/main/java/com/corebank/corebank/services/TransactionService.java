@@ -12,7 +12,7 @@ package com.corebank.corebank.services;
 
 public interface TransactionService {
     void createTransaction(CreateTransactionDto dto, Long account_id);
-    Page<TransactionDto> findTransactions(Pageable pageable, String start, String end);
+    Page<TransactionDto> findTransactions(Long account_id, Pageable pageable, String start, String end);
 }
 
 

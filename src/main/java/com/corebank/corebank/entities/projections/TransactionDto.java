@@ -10,7 +10,7 @@ public interface TransactionDto {
 
     TransactionType getType();
 
-    LocalDateTime getCreatedAt();
+    LocalDateTime getDate();
 
 
 

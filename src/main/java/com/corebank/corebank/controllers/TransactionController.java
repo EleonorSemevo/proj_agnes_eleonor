@@ -44,7 +44,7 @@ public class TransactionController {
                 Integer.parseInt(size)
         );
 
-        return new ResponseEntity<>(transactionService.findTransactions(pageable,start,end), HttpStatus.OK);
+        return new ResponseEntity<>(transactionService.findTransactions(account_id, pageable,start,end), HttpStatus.OK);
     }
 
     @PostMapping("/{account_id}/transactions")

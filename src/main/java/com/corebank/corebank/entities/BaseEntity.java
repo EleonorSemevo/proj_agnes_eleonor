@@ -23,9 +23,7 @@ public class BaseEntity {
     @JsonIgnore
     private LocalDateTime createdAt;
 
-   /* @ManyToOne
-    @JoinColumn(name = "created_by", updatable = false)
-    private User createdBy;*/
+
 
     @Column(insertable = false)
     @JsonIgnore

@@ -1,8 +1,7 @@
 package com.corebank.corebank.repositories;
 
-        import com.corebank.corebank.entities.Client;
+        import com.corebank.corebank.entities.Account;
         import com.corebank.corebank.entities.Transaction;
-        import com.corebank.corebank.entities.projections.AccountDto;
         import com.corebank.corebank.entities.projections.TransactionDto;
         import org.springframework.data.domain.Page;
         import org.springframework.data.domain.Pageable;
@@ -15,7 +14,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
         @Query("SELECT t FROM Transaction t")
         Page<TransactionDto> findTransactions(Pageable pageable);
 
-        @Query("SELECT t FROM Transaction t")
-        Page<TransactionDto> findByCreatedAtAfterAndCreatedAtBefore(LocalDateTime date1, LocalDateTime date2, Pageable pageable);
+       // @Query("SELECT t FROM Transaction t WHERE t.createdAt>:date1 , ")
+        Page<TransactionDto> findByAccountAndDateAfterAndDateBeforeAndDateIsAndDateIs(Account account, LocalDateTime date1, LocalDateTime date2, LocalDateTime date3, LocalDateTime date4, Pageable pageable);
 
 }

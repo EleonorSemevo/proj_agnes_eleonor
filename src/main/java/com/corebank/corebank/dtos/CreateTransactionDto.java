@@ -8,6 +8,8 @@ package com.corebank.corebank.dtos;
         import lombok.NoArgsConstructor;
         import lombok.NonNull;
 
+        import java.time.LocalDateTime;
+
 @Data // permet de generer les getter et setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +20,8 @@ public class CreateTransactionDto {
 
     @NotBlank(message = "Le type de transaction  ne peut pas etre vide")
     private String transaction_type;
+
+
+
 }
 
